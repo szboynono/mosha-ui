@@ -1,26 +1,31 @@
 <template>
-  <button class="primary">Primary</button>
+  <button :class="btnType">
+    <slot></slot>
+  </button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted } from "vue";
 
 export default defineComponent({
   name: "Button",
+  props: {
+    btnType: String
+  },
 });
 </script>
 
 <style lang="scss" scoped>
 button {
-  color: white;
   padding: 0.375rem 0.75rem;
-  color: black;
+  color: white;
   line-height: 1.5;
   text-decoration: none;
   font-weight: 400;
   font-size: 16px;
   text-align: center;
   user-select: none;
+  cursor: pointer;
   vertical-align: middle;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.4);
   backdrop-filter: blur(2px);
@@ -31,12 +36,43 @@ button {
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   &.primary {
-    background: rgba(13, 110, 253, 0.85);
+    background: rgba(13, 110, 253, 0.75);
 
 
     &:hover {
-      background-color: rgba(13, 110, 253, 0.75);
+      background-color: rgba(13, 110, 253, 0.3);
     }
+  }
+
+  &.success {
+    background: rgba(25, 135, 84, 0.75);
+
+
+    &:hover {
+      background-color: rgba(25, 135, 84, 0.3);
+    }
+  }
+
+  &.danger {
+    background: rgba(220, 53, 69, 0.75);
+
+
+    &:hover {
+      background-color: rgba(220, 53, 69, 0.3);
+    }
+  }
+
+  &.warning {
+    background: rgba(255, 193, 7, 0.75);
+
+
+    &:hover {
+      background-color: rgba(255, 193, 7, 0.3);
+    }
+  }
+  
+  &:hover {
+    color: white;
   }
 
   &:focus {

@@ -1,8 +1,10 @@
 <template>
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora earum
-  provident optio quaerat quia et vero quidem rem, eligendi nihil quisquam
-  obcaecati tempore consequatur magni recusandae velit, nisi accusantium qui!
-  <Button></Button>
+    <div>
+        <Button btnType="primary">Primary</Button>
+        <Button btnType="success">Success</Button>
+        <Button btnType="danger">Danger</Button>
+        <Button btnType="warning">Warning</Button>
+    </div>
 </template>
 
 <script lang="ts">
@@ -17,9 +19,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-Button {
-  position: absolute;
-  left: 10px;
-  top: 2px;
+div {
+    width: 100vw;
+    height: 100vh;
 }
 </style>
