@@ -16,4 +16,4 @@ const install = (Vue: App) => {
 
 export default { install }
 
-export { default as Button } from './components/button'
+export { buttonPlugin as Button } from './components/button'
