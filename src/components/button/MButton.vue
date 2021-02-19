@@ -1,16 +1,21 @@
 <template>
-  <button :class="btnType">
+  <button class="m-button" :class="btnType">
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
+
+export type BtnType = 'primary' | 'danger' | 'warning'
 
 export default defineComponent({
   name: "m-button",
   props: {
-    btnType: String
+    btnType: {
+      type: String as PropType<BtnType>,
+      required: true
+    }
   },
 });
 </script>
