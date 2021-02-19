@@ -1,5 +1,8 @@
 <template>
-  <m-button type='primary'>dsadas</m-button>
+  <m-button btnType='primary' btnSize='lg'>Primary</m-button>
+  <m-button btnType='success' btnSize='sm'>Button</m-button>
+  <m-button btnType='danger'>Button</m-button>
+  <m-button btnType='warning'>Button</m-button>
 </template>
 
 <script lang="ts">

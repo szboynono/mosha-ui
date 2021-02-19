@@ -1,5 +1,8 @@
+@import '../../styles/variables';
+
 .m-button {
-  padding: 0.375rem 0.75rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 6px 12px;
   color: white;
   line-height: 1.5;
   text-decoration: none;
@@ -17,48 +20,53 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
+  &:focus {
+    outline: none;
+  }
+
+  &.lg {
+    padding: 8px 16px;
+    font-size: 20px;
+  }
+
+  &.sm {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
   &.primary {
-    background: rgba(13, 110, 253, 0.75);
+    background: $primary;
 
 
     &:hover {
-      background-color: rgba(13, 110, 253, 0.3);
+      background-color: $primary-darker;
     }
   }
 
   &.success {
-    background: rgba(25, 135, 84, 0.75);
+    background: $success;
 
 
     &:hover {
-      background-color: rgba(25, 135, 84, 0.3);
+      background-color: $success-darker;
     }
   }
 
   &.danger {
-    background: rgba(220, 53, 69, 0.75);
+    background: $danger;
 
 
     &:hover {
-      background-color: rgba(220, 53, 69, 0.3);
+      background-color: $danger-darker;
     }
   }
 
   &.warning {
-    background: rgba(255, 193, 7, 0.75);
+    background: $warning;
 
 
     &:hover {
-      background-color: rgba(255, 193, 7, 0.3);
+      background-color: $warning-darker;
     }
   }
-  
-  &:hover {
-    color: white;
-  }
-
-  &:focus {
-    outline: none;
-  }
 }
-
