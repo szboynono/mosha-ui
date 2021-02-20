@@ -1,12 +1,24 @@
 module.exports = {
   base: '/mosha-ui/',
-  title: 'Hello VitePress',
+  title: 'Mosha UI',
   description: 'Just playing around.',
+  
+
   themeConfig: {
-    repo: '',
+    repo: 'szboynono/mosha-ui',
+    logo: '/logo.svg',
     docsDir: 'docs',
+    docsBranch: 'main',
+    editLinks: true,
+    editLinkText: 'Suggest changes to this page',
 
     lastUpdated: 'Last Updated',
+
+    nav: [
+      { text: 'Guide', link: '/guide/' },
+      { text: 'Config', link: '/config/' },
+      { text: 'Plugins', link: '/plugins/' },
+    ],
 
     sidebar: {
       '/guide/': getGuideSidebar(),
