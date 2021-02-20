@@ -2,7 +2,9 @@ module.exports = {
   base: '/mosha-ui/',
   title: 'Mosha UI',
   description: 'Just playing around.',
-  
+  head: [
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap' }],
+  ],
 
   themeConfig: {
     repo: 'szboynono/mosha-ui',
@@ -16,8 +18,6 @@ module.exports = {
 
     nav: [
       { text: 'Guide', link: '/guide/' },
-      { text: 'Config', link: '/config/' },
-      { text: 'Plugins', link: '/plugins/' },
     ],
 
     sidebar: {
@@ -30,10 +30,15 @@ module.exports = {
 function getGuideSidebar() {
   return [
     {
-      text: 'Introduction',
+      text: 'Getting Started',
       children: [
-        { text: 'What is VitePress?', link: '/' },
-        { text: 'Getting Started', link: '/guide/getting-started' },
+        { text: 'Introduction', link: '/getting-started/introduction' },
+      ]
+    },
+    {
+      text: 'Components',
+      children: [
+        { text: 'Button', link: '/components/button' },
       ]
     },
   ]

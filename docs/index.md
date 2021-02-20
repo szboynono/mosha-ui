@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo.svg
 actionText: Get Started
-actionLink: /guide/getting-started
+actionLink: /getting-started/introduction
 
 features:
   - title: 💡 coolad ahlsdh

@@ -1,5 +1,5 @@
 <template>
-  <button class="m-button ripple primary-gradient-background" :class="[btnType, btnSize]">
+  <button class="m-button ripple primary-gradient-background" :class="[type, size]">
     <slot></slot>
   </button>
 </template>
@@ -13,11 +13,11 @@ export type BtnSize = 'lg' | 'sm'
 export default defineComponent({
   name: "m-button",
   props: {
-    btnType: {
+    type: {
       type: String as PropType<BtnType>,
       required: true
     },
-    btnSize: {
+    size: {
       type: String as PropType<BtnSize>,
     }
   },
