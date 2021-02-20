@@ -1,5 +1,5 @@
 <template>
-  <button class="m-button ripple" :class="[btnType, btnSize]">
+  <button class="m-button ripple primary-gradient-background" :class="[btnType, btnSize]">
     <slot></slot>
   </button>
 </template>
