@@ -1,21 +1,21 @@
 <template>
   <div class="mosha__alert" :class="[type]">
-    <template v-if="type === 'success'">
-      <span class="material-icons"> check_circle </span>
+    <template v-if="type === 'success' && showIcon">
+      <span class="material-icons" :class="{withDescription: ''}"> check_circle </span>
     </template>
-    <template v-else-if="type === 'warning'">
-      <span class="material-icons"> info </span>
+    <template v-else-if="type === 'warning' && showIcon">
+      <span class="material-icons" :class="{withDescription: ''}"> info </span>
     </template>
-    <template v-else-if="type === 'info'">
-      <span class="material-icons"> info </span>
+    <template v-else-if="type === 'info' && showIcon">
+      <span class="material-icons" :class="{withDescription: ''}"> info </span>
     </template>
-    <template v-else-if="type === 'danger'">
-      <span class="material-icons"> highlight_off </span>
+    <template v-else-if="type === 'danger' && showIcon">
+      <span class="material-icons" :class="{withDescription: ''}"> highlight_off </span>
     </template>
-    <template v-else>
-      <span class="material-icons"> info </span>
-    </template>
-    <slot></slot>
+    <div class="mosha__alert__content">
+      <div class="mosha__alert__content__title">{{ title }}</div>
+      <div class="mosha__alert__content__desc">{{ description }}</div>
+    </div>
   </div>
 </template>
 
@@ -30,6 +30,16 @@ export default defineComponent({
     type: {
       type: String as PropType<AlertType>,
       required: true,
+    },
+    showIcon: {
+      type: Boolean,
+      default: false,
+    },
+    title: {
+      type: String,
+    },
+    description: {
+      type: String,
     },
   },
 })

@@ -1,6 +1,12 @@
-.home-hero .image {
-    width: 200px;
-    height: 200px;
+  .home-hero .image {
+    max-height: 400px !important;
+    width: 400px;
+    height: 400px;
+    opacity: .8;
+  }
+
+  .home-hero #main-title {
+    color: white !important;
   }
   
   .nav-bar .logo {

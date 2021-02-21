@@ -1,7 +1,7 @@
 .mosha__alert {
     display: flex;
     width: 100%;
-    
+    font-family: 'Roboto', sans-serif;
     backdrop-filter: blur( 40px );
     -webkit-backdrop-filter: blur( 40px );
     border: solid 2px transparent;
@@ -10,6 +10,19 @@
     padding: 8px 16px;
     border-radius: 16px;
 
+    &__content {
+        display: flex;
+        flex-direction: column;
+        word-break: break-word;
+
+        &__title {
+            font-size: 16px;
+        }
+
+        &__desc {
+            font-size: 14px;
+        }
+    }
     & p {
         font-size: 16px;
         margin: 0;
@@ -21,6 +34,11 @@
         font-size: 16px;
         position: relative;
         top: 4px;
+
+        &.withDescription {
+            font-size: 24px;
+            top: 0px;
+        }
     }
 
     &.success {
