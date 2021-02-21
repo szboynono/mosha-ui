@@ -1,5 +1,5 @@
 <template>
-  <button class="m-button ripple primary-gradient-background" :class="[type, size]">
+  <button class="m-button ripple" :disabled="disabled" :class="[type, size]">
     <slot></slot>
   </button>
 </template>
@@ -19,6 +19,10 @@ export default defineComponent({
     },
     size: {
       type: String as PropType<BtnSize>,
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
 });

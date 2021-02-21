@@ -43,6 +43,11 @@
     &:hover {
       background: radial-gradient(circle, $primary-darker 70%, $primary 100%);
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      background: radial-gradient(circle, $primary-disabled-light 70%, $primary-disabled-dark 100%);
+    }
   }
 
   &.success {
@@ -52,6 +57,11 @@
 
     &:hover {
       background: radial-gradient(circle, $success-darker 70%, $success 100%);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background: radial-gradient(circle, $success-disabled-light 70%, $success-disabled-dark 100%);
     }
   }
 
@@ -63,6 +73,11 @@
     &:hover {
       background: radial-gradient(circle, $danger-darker 70%, $danger 100%);
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      background: radial-gradient(circle, $danger-disabled-light 70%, $danger-disabled-dark 100%);
+    }
   }
 
   &.warning {
@@ -72,6 +87,11 @@
 
     &:hover {
       background: radial-gradient(circle, $warning-darker 70%, $warning 100%);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background: radial-gradient(circle, $warning-disabled-light 70%, $warning-disabled-dark 100%);
     }
   }
 }

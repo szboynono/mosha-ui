@@ -1,15 +1,23 @@
 $primary: rgba(13, 110, 253);
-$primary-darker: rgba(13, 110, 253, 0.9);
 $primary-light: rgba(13, 110, 253, 0.75);
+$primary-darker: rgba(13, 110, 253, 0.9);
+$primary-disabled-light: rgba(13, 110, 253, 0.3);
+$primary-disabled-dark: rgba(13, 110, 253, 0.4);
 
 $success: rgba(25, 135, 84);
 $success-darker: rgba(25, 135, 84, 0.9);
 $success-light: rgba(25, 135, 84, 0.75);
+$success-disabled-light: rgba(25, 135, 84, 0.3);
+$success-disabled-dark: rgba(25, 135, 84, 0.4);
 
 $danger: rgba(220, 53, 69);
 $danger-darker: rgba(220, 53, 69, 0.9);
 $danger-light: rgba(220, 53, 69, 0.75);
+$danger-disabled-light: rgba(220, 53, 69, 0.3);
+$danger-disabled-dark: rgba(220, 53, 69, 0.4);
 
 $warning: rgba(255, 193, 7);
 $warning-darker: rgba(255, 193, 7, 0.9);
 $warning-light: rgba(255, 193, 7, 0.75);
+$warning-disabled-light: rgba(255, 193, 7, 0.3);
+$warning-disabled-dark: rgba(255, 193, 7, 0.4);
