@@ -1,5 +1,6 @@
 .mosha__alert {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     font-family: 'Roboto', sans-serif;
     backdrop-filter: blur( 40px );
@@ -9,6 +10,22 @@
     box-shadow: 10px 10px 10px  rgba(46, 54, 68, 0.08);
     padding: 8px 16px;
     border-radius: 16px;
+
+    &__close-icon::before {
+        content: "\00d7"; // here is your X(cross) sign.
+        color: rgba(0,0,0,.45);
+        transition: color .3s;
+        font-weight: 300;
+        cursor: pointer;
+    }
+
+    &__close-icon:hover::before {
+        color: rgba(0,0,0,1);
+    }
+
+    &__main-content {
+        display: flex;
+    }
 
     &__content {
         display: flex;
@@ -23,6 +40,7 @@
             font-size: 14px;
         }
     }
+
     & p {
         font-size: 16px;
         margin: 0;
@@ -33,7 +51,7 @@
         margin-right: 8px;
         font-size: 16px;
         position: relative;
-        top: 4px;
+        top: 2px;
 
         &.withDescription {
             font-size: 24px;
@@ -66,4 +84,11 @@
             color: #ff4d4f;
         }
     }
+}
+
+.alert-fade-enter-active, .alert-fade-leave-active {
+    transition: opacity .5s;
+}
+.alert-fade-enter, .alert-fade-leave-to {
+    opacity: 0;
 }

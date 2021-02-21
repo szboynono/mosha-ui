@@ -1,9 +1,9 @@
 <template>
   <div class="alert-demo">
-    <m-alert type='info' title="Info Alert" description="this is a long one" showIcon></m-alert>
-    <m-alert type='success' title="Success Alert"></m-alert>
-    <m-alert type='warning' title="Warning Alert"></m-alert>
-    <m-alert type='danger' title="Danger Alert"></m-alert>
+    <m-alert class="alert-demo-item" type='info' title="Info Alert" description="this is a long one" showIcon></m-alert>
+    <m-alert class="alert-demo-item" type='success' title="Success Alert" showIcon></m-alert>
+    <m-alert class="alert-demo-item" type='warning' title="Warning Alert" closable></m-alert>
+    <m-alert class="alert-demo-item" type='danger' title="Danger Alert"></m-alert>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .alert-demo {
-  div {
+  .alert-demo-item {
     margin: 4px 0;
   }
 }
