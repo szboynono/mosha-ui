@@ -39,6 +39,7 @@ function getGuideSidebar() {
       text: 'Components',
       children: [
         { text: 'Button', link: '/components/button' },
+        { text: 'Alert', link: '/components/alert' },
       ]
     },
   ]

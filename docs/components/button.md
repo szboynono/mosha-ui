@@ -1,6 +1,6 @@
 # Button
 
-Just button
+Just a button
 
 ## Basic usage
 
