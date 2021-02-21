@@ -9,7 +9,7 @@ module.exports = {
 
   themeConfig: {
     repo: 'szboynono/mosha-ui',
-    // logo: '/logo.svg',
+    logo: '/meizi.png',
     docsDir: 'docs',
     docsBranch: 'main',
     editLinks: true,

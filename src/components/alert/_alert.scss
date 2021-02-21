@@ -1,15 +1,14 @@
 .mosha__alert {
     display: flex;
     width: 100%;
-    background: rgba( 183, 235, 143, 0.25 );
+    
     backdrop-filter: blur( 40px );
     -webkit-backdrop-filter: blur( 40px );
     border: solid 2px transparent;
     background-clip: padding-box;
-    box-shadow: 10px 10px 10px  rgba(46, 54, 68, 0.03);
+    box-shadow: 10px 10px 10px  rgba(46, 54, 68, 0.08);
     padding: 8px 16px;
     border-radius: 16px;
-
 
     & p {
         font-size: 16px;
@@ -21,8 +20,32 @@
         margin-right: 8px;
         font-size: 16px;
         position: relative;
-        top: 5px;
-        color: #52c41a;
+        top: 4px;
     }
 
+    &.success {
+        background: rgba( 183, 235, 143, 0.25 );
+        & .material-icons {
+            color: #52c41a;
+        }
+    }
+
+    &.info {
+        background: rgba( 145, 213, 255, 0.25 );
+        & .material-icons {
+            color: #1890ff;
+        }
+    }
+    &.warning {
+        background: rgba( 255, 229, 143, 0.25 );
+        & .material-icons {
+            color: #faad14;
+        }
+    }
+    &.danger {
+        background: rgba( 255, 204, 199, 0.25 );
+        & .material-icons {
+            color: #ff4d4f;
+        }
+    }
 }
