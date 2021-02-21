@@ -27,3 +27,4 @@ Just button
 <m-button type="primary" size="lg">Large</m-button>
 <m-button type="primary" size="sm">Small</m-button>
 ```
+
