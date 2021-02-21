@@ -1,5 +1,7 @@
 <template>
-    Alert
+    <span class="material-icons">
+        check_circle
+    </span>
 </template>
 
 <script lang="ts">

@@ -55,7 +55,8 @@ app.mount('#app')
 ```
 ### Add required assets
 
-Include the font in your index.html
+Mosha UI uses icons from material design and google font, please include the aseets in your index.html
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
