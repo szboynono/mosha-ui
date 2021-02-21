@@ -1,5 +1,7 @@
 <template>
-  <m-alert></m-alert>
+  <div class="alert-demo">
+    <m-alert></m-alert>
+  </div>
 </template>
 
 <script>
@@ -8,3 +10,7 @@ export default {
 }
 
 </script>
+
+<style lang="scss" scoped>
+
+</style>
