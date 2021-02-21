@@ -38,18 +38,19 @@ app.use(mosha)
 app.mount('#app')
 ```
 
-Importing only the button component:
+Import only selected components:
 
 ```js
 /** src/main.js */
 import { createApp } from 'vue'
 import App from './App.vue'
-import { Button } from 'mosha-ui'
+import { Button, Alert } from 'mosha-ui'
 import 'mosha-ui/dist/style.css'
 
 const app = createApp(App)
 
 app.use(Button)
+app.use(Alert)
 app.mount('#app')
 ```
 ### Add required assets

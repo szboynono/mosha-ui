@@ -15,7 +15,10 @@ export default defineComponent({
   props: {
     type: {
       type: String as PropType<BtnType>,
-      required: true
+      required: true,
+      validator: (value: BtnType) => {
+        return ['success', 'warning', 'danger', 'primary'].indexOf(value) !== -1
+      }
     },
     size: {
       type: String as PropType<BtnSize>,
