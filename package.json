@@ -9,6 +9,7 @@
   "umd:main": "dist/mosha-ui.umd.js",
   "jsdelivr": "dist/mosha-ui.umd.js",
   "unpkg": "dist/mosha-ui.umd.js",
+  "license": "MIT",
   "exports": {
     ".": {
       "import": "./dist/mosha-ui.es.js",
