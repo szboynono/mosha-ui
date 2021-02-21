@@ -1,5 +1,5 @@
 <template>
-  <button class="m-button ripple" :disabled="disabled" :class="[type, size]">
+  <button class="mosha__button mosha__ripple" :disabled="disabled" :class="[type, size]">
     <slot></slot>
   </button>
 </template>

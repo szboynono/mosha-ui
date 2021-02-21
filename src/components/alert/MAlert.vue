@@ -1,7 +1,10 @@
 <template>
-    <span class="material-icons">
-        check_circle
-    </span>
+    <div class="mosha__alert">
+        <span class="material-icons">
+            check_circle
+        </span>
+        <p>Success tips</p>
+    </div>
 </template>
 
 <script lang="ts">
