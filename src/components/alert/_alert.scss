@@ -33,10 +33,12 @@
         word-break: break-word;
 
         &__title {
+            font-weight: 400;
             font-size: 16px;
         }
 
         &__desc {
+            font-weight: 300;
             font-size: 14px;
         }
     }
@@ -47,7 +49,7 @@
         padding: 0;
     }
 
-    & .material-icons {
+    & .material-icons-round {
         margin-right: 8px;
         font-size: 16px;
         position: relative;
@@ -61,26 +63,26 @@
 
     &.success {
         background: rgba( 183, 235, 143, 0.25 );
-        & .material-icons {
+        & .material-icons-round {
             color: #52c41a;
         }
     }
 
     &.info {
         background: rgba( 145, 213, 255, 0.25 );
-        & .material-icons {
+        & .material-icons-round {
             color: #1890ff;
         }
     }
     &.warning {
         background: rgba( 255, 229, 143, 0.25 );
-        & .material-icons {
+        & .material-icons-round {
             color: #faad14;
         }
     }
     &.danger {
         background: rgba( 255, 204, 199, 0.25 );
-        & .material-icons {
+        & .material-icons-round {
             color: #ff4d4f;
         }
     }

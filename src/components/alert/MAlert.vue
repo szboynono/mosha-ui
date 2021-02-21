@@ -4,7 +4,7 @@
       <div class="mosha__alert__main-content">
         <template v-if="type === 'success' && showIcon">
           <span
-            class="material-icons"
+            class="material-icons-round"
             :class="description ? 'withDescription' : null"
           >
             check_circle
@@ -12,7 +12,7 @@
         </template>
         <template v-else-if="type === 'warning' && showIcon">
           <span
-            class="material-icons"
+            class="material-icons-round"
             :class="description ? 'withDescription' : null"
           >
             info
@@ -20,7 +20,7 @@
         </template>
         <template v-else-if="type === 'info' && showIcon">
           <span
-            class="material-icons"
+            class="material-icons-round"
             :class="description ? 'withDescription' : null"
           >
             info
@@ -28,7 +28,7 @@
         </template>
         <template v-else-if="type === 'danger' && showIcon">
           <span
-            class="material-icons"
+            class="material-icons-round"
             :class="description ? 'withDescription' : null"
           >
             highlight_off

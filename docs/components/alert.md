@@ -4,28 +4,41 @@ Just an alert
 
 ## Basic usage
 
-<AlertDemo></AlertDemo>
-
-
+<AlertDemo type="basic" />
 
 ```html
-<m-button type="primary">Primary</m-button>
-<m-button type="success">Success</m-button>
-<m-button type="warning">Warning</m-button>
-<m-button type="danger">Danger</m-button>
-<m-button type="primary" size="lg">Large</m-button>
-<m-button type="primary" size="sm">Small</m-button>
+<m-alert type='info' title="Info Alert" />
+<m-alert type='success' title="Success Alert" />
+<m-alert type='warning' title="Warning Alert" />
+<m-alert type='danger' title="Danger Alert" />
 ```
 
-## Disabled
+## With icon
 
-<ButtonDemo disabled />
+<AlertDemo type="icon" />
 
 ```html
-<m-button type="primary" >Primary</m-button>
-<m-button type="success">Success</m-button>
-<m-button type="warning">Warning</m-button>
-<m-button type="danger">Danger</m-button>
-<m-button type="primary" size="lg">Large</m-button>
-<m-button type="primary" size="sm">Small</m-button>
+<m-alert type='info' title="Info Alert" showIcon />
+<m-alert type='success' title="Success Alert" showIcon />
+<m-alert type='warning' title="Warning Alert" showIcon />
+<m-alert type='danger' title="Danger Alert" showIcon />
+```
+
+## With description
+
+<AlertDemo type="description" />
+
+```html
+<m-alert type="info" title="Info Alert" description="This is some ddescription, not too long, just enough" showIcon />
+<m-alert type="success" title="Success Alert" description="This is some ddescription, not too long, just enough" showIcon />
+<m-alert type="warning" title="Warning Alert" description="This is some ddescription, not too long, just enough" showIcon />
+<m-alert type="danger" title="Danger Alert" description="This is some ddescription, not too long, just enough" showIcon />
+```
+
+## Closable
+
+<AlertDemo type="closable" />
+
+```html
+<m-alert type="warning" title="Closable Alert" showIcon closable />
 ```

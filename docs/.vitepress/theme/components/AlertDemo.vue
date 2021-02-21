@@ -1,17 +1,98 @@
 <template>
   <div class="alert-demo">
-    <m-alert class="alert-demo-item" type='info' title="Info Alert" description="this is a long one" showIcon></m-alert>
-    <m-alert class="alert-demo-item" type='success' title="Success Alert" showIcon></m-alert>
-    <m-alert class="alert-demo-item" type='warning' title="Warning Alert" closable></m-alert>
-    <m-alert class="alert-demo-item" type='danger' title="Danger Alert"></m-alert>
+    <template v-if="type === 'basic'">
+      <m-alert class="alert-demo-item" type="info" title="Info Alert"></m-alert>
+      <m-alert
+        class="alert-demo-item"
+        type="success"
+        title="Success Alert"
+      ></m-alert>
+      <m-alert
+        class="alert-demo-item"
+        type="warning"
+        title="Warning Alert"
+      ></m-alert>
+      <m-alert
+        class="alert-demo-item"
+        type="danger"
+        title="Danger Alert"
+      ></m-alert>
+    </template>
+    <template v-else-if="type === 'icon'">
+      <m-alert
+        class="alert-demo-item"
+        type="info"
+        title="Info Alert"
+        showIcon
+      ></m-alert>
+      <m-alert
+        class="alert-demo-item"
+        type="success"
+        title="Success Alert"
+        showIcon
+      ></m-alert>
+      <m-alert
+        class="alert-demo-item"
+        type="warning"
+        title="Warning Alert"
+        showIcon
+      ></m-alert>
+      <m-alert
+        class="alert-demo-item"
+        type="danger"
+        title="Danger Alert"
+        showIcon
+      ></m-alert>
+    </template>
+    <template v-else-if="type === 'description'">
+      <m-alert
+        class="alert-demo-item"
+        type="info"
+        title="Info Alert"
+        description="This is some ddescription, not too long, just enough"
+        showIcon
+      ></m-alert>
+      <m-alert
+        class="alert-demo-item"
+        type="success"
+        title="Success Alert"
+        showIcon
+        description="This is some ddescription, not too long, just enough"
+      ></m-alert>
+      <m-alert
+        class="alert-demo-item"
+        type="warning"
+        title="Warning Alert"
+        description="This is some ddescription, not too long, just enough"
+      ></m-alert>
+      <m-alert
+        class="alert-demo-item"
+        type="danger"
+        title="Danger Alert"
+        description="This is some ddescription, not too long, just enough"
+      ></m-alert>
+    </template>
+    <template v-else-if="type === 'closable'">
+      <m-alert 
+        class="alert-demo-item"
+        type="warning"
+        title="Closable Alert"
+        showIcon
+        closable
+      ></m-alert>
+    </template>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AlertDemo'
+  name: 'AlertDemo',
+  props: {
+    type: {
+      type: String,
+    },
+  },
 }
-
 </script>
 
 <style lang="scss" scoped>

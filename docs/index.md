@@ -14,6 +14,10 @@ features:
 footer: MIT Licensed | Copyright © 2021 Tony Liu
 ---
 
-<div class="rest">
-
+<div class="demo">
+  <m-alert type="info" title="This is cool" />
+  <m-alert type="info" title="Try this out, mosha ui" />
+  <m-alert type="info" title="Created with love and fun, good good" />
+  <m-alert type="info" title="2021 latest trend!" />
+  <m-alert type="info" title="Light weight" />
 </div>
