@@ -4,7 +4,7 @@
 
 # Mosha UI
 
-A UI Library that loves glassmorphism!
+A Vue 3 UI Library that loves glassmorphism!
 
 (🚀Under construction)
 
