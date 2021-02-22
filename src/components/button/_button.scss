@@ -13,11 +13,12 @@
   user-select: none;
   cursor: pointer;
   vertical-align: middle;
-  box-shadow: 0 2px 6px 0 rgba(31, 38, 135, 0.2);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 10px 10px 10px  rgba(46, 54, 68, 0.03);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: solid 2px transparent;
+  background-clip: padding-box;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
@@ -35,6 +36,11 @@
     font-size: 14px;
   }
 
+  &:disabled {
+      cursor: not-allowed;
+      color: #c8c9cc;
+  }
+
   &.primary {
     
     background: $primary;
@@ -45,9 +51,17 @@
       background: radial-gradient(circle, $primary-darker 70%, $primary 100%);
     }
 
-    &:disabled {
-      cursor: not-allowed;
-      background: radial-gradient(circle, $primary-disabled-light 70%, $primary-disabled-dark 100%);
+    
+
+    &--outline {
+      background: rgba( 145, 213, 255, 0.25 );
+      color: $primary;
+      border-color: $primary-light;
+    }
+
+    &--outline:hover {
+      color: white;
+      background: radial-gradient(circle, $primary-light 70%, $primary-darker 100%);
     }
   }
 
@@ -60,9 +74,15 @@
       background: radial-gradient(circle, $success-darker 70%, $success 100%);
     }
 
-    &:disabled {
-      cursor: not-allowed;
-      background: radial-gradient(circle, $success-disabled-light 70%, $success-disabled-dark 100%);
+    &--outline {
+      background: rgba( 183, 235, 143, 0.25 );
+      color: $success;
+      border-color: $success-light;
+    }
+
+    &--outline:hover {
+      color: white;
+      background: radial-gradient(circle, $success-light 70%, $success-darker 100%);
     }
   }
 
@@ -75,9 +95,15 @@
       background: radial-gradient(circle, $danger-darker 70%, $danger 100%);
     }
 
-    &:disabled {
-      cursor: not-allowed;
-      background: radial-gradient(circle, $danger-disabled-light 70%, $danger-disabled-dark 100%);
+    &--outline {
+      background: rgba( 255, 204, 199, 0.25 );
+      color: $danger;
+      border-color: $danger-light;
+    }
+
+    &--outline:hover {
+      color: white;
+      background: radial-gradient(circle, $danger-light 70%, $danger-darker 100%);
     }
   }
 
@@ -90,9 +116,15 @@
       background: radial-gradient(circle, $warning-darker 70%, $warning 100%);
     }
 
-    &:disabled {
-      cursor: not-allowed;
-      background: radial-gradient(circle, $warning-disabled-light 70%, $warning-disabled-dark 100%);
+    &--outline {
+      background: rgba( 255, 229, 143, 0.25 );
+      color: $warning;
+      border-color: $warning-light;
+    }
+
+    &--outline:hover {
+      color: white;
+      background: radial-gradient(circle, $warning-light 70%, $warning-darker 100%);
     }
   }
 }

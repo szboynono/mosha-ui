@@ -59,6 +59,7 @@
     background-image: url('./assets/bg.jpg');
     background-size: contain;
     background-position: center;
+    background-attachment: fixed;
     color: black;
   }
 

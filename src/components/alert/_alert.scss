@@ -9,7 +9,7 @@
     background-clip: padding-box;
     box-shadow: 10px 10px 10px  rgba(46, 54, 68, 0.08);
     padding: 8px 16px;
-    border-radius: 16px;
+    border-radius: 8px;
 
     &__close-icon::before {
         content: "\00d7"; // here is your X(cross) sign.
@@ -62,26 +62,26 @@
     }
 
     &.success {
-        background: rgba( 183, 235, 143, 0.25 );
+        background: rgba( 183, 235, 143, 0.3 );
         & .material-icons-round {
             color: #52c41a;
         }
     }
 
     &.info {
-        background: rgba( 145, 213, 255, 0.25 );
+        background: rgba( 145, 213, 255, 0.3 );
         & .material-icons-round {
             color: #1890ff;
         }
     }
     &.warning {
-        background: rgba( 255, 229, 143, 0.25 );
+        background: rgba( 255, 229, 143, 0.3 );
         & .material-icons-round {
             color: #faad14;
         }
     }
     &.danger {
-        background: rgba( 255, 204, 199, 0.25 );
+        background: rgba( 255, 204, 199, 0.3 );
         & .material-icons-round {
             color: #ff4d4f;
         }

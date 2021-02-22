@@ -1,7 +1,7 @@
 module.exports = {
   base: '/mosha-ui/',
   title: 'Mosha UI',
-  description: 'Just playing around.',
+  description: 'A glassmorphism inspired Vue 3 UI library',
   head: [
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round' }],
