@@ -18,7 +18,7 @@ module.exports = {
     lastUpdated: 'Last Updated',
 
     nav: [
-      { text: 'Guide', link: '/guide/' },
+      { text: 'Getting Started', link: '/getting-started/introduction' },
     ],
 
     sidebar: {
