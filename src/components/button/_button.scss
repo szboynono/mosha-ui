@@ -1,5 +1,9 @@
 @import '../../styles/variables';
 
+.mosha__button-container {
+  display: inline-block;
+  overflow: hidden;
+}
 .mosha__button {
   font-family: 'Roboto', sans-serif;
   margin: 0;

@@ -1,15 +1,17 @@
 <template>
-  <button
-    class="mosha__button mosha__ripple"
-    :disabled="disabled"
-    :class="[
-      disabled ? null : type,
-      size,
-      outline && !disabled ? `${type}--outline` : null,
-    ]"
-  >
-    <slot></slot>
-  </button>
+  <div class="mosha__button-container">
+    <button
+      class="mosha__button mosha__ripple"
+      :disabled="disabled"
+      :class="[
+        disabled ? null : type,
+        size,
+        outline && !disabled ? `${type}--outline` : null,
+      ]"
+    >
+      <slot></slot>
+    </button>
+  </div>
 </template>
 
 <script lang="ts">
