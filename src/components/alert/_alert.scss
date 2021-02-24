@@ -63,7 +63,7 @@
 
     &.success {
         background: rgba( 183, 235, 143 );
-        background: linear-gradient(145deg, rgba(183, 235, 143,0.4) 0%, rgba(183, 235, 143,0.1) 100%);
+        background: linear-gradient(145deg, rgba(183, 235, 143,0.6) 0%, rgba(183, 235, 143,0.3) 100%);
         & .material-icons-round {
             color: #52c41a;
         }
@@ -71,7 +71,7 @@
 
     &.info {
         background: rgba( 145, 213, 255 );
-        background: linear-gradient(145deg, rgba(145, 213, 255,0.4) 0%, rgba(145, 213, 255,0.1) 100%);
+        background: linear-gradient(145deg, rgba(145, 213, 255,0.6) 0%, rgba(145, 213, 255,0.3) 100%);
 
         & .material-icons-round {
             color: #1890ff;
@@ -79,14 +79,14 @@
     }
     &.warning {
         background: rgba( 255, 229, 143 );
-        background: linear-gradient(145deg, rgba(255, 229, 143,0.4) 0%, rgba(255, 229, 143,0.1) 100%);
+        background: linear-gradient(145deg, rgba(255, 229, 143,0.6) 0%, rgba(255, 229, 143,0.3) 100%);
         & .material-icons-round {
             color: #faad14;
         }
     }
     &.danger {
         background: rgba( 255, 204, 199 );
-        background: linear-gradient(145deg, rgba(255, 204, 199,0.4) 0%, rgba(255, 204, 199,0.1) 100%);
+        background: linear-gradient(145deg, rgba(255, 204, 199,0.6) 0%, rgba(255, 204, 199,0.3) 100%);
         & .material-icons-round {
             color: #ff4d4f;
         }
