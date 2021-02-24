@@ -40,5 +40,6 @@ Just an alert
 <AlertDemo type="closable" />
 
 ```html
-<m-alert type="warning" title="Closable Alert" showIcon closable />
+<m-alert type="info" title="Closable Alert, try to close me!" description="close me close me, dismiss me" showIcon closable />
+<m-alert type="danger" title="Closable Alert, try to close me!" showIcon closable />
 ```

@@ -49,7 +49,7 @@
         class="alert-demo-item"
         type="info"
         title="Info Alert"
-        description="This is some ddescription, not too long, just enough"
+        description="This is some description, not too long, just enough"
         showIcon
       ></m-alert>
       <m-alert
@@ -57,26 +57,34 @@
         type="success"
         title="Success Alert"
         showIcon
-        description="This is some ddescription, not too long, just enough"
+        description="This is some description, not too long, just enough"
       ></m-alert>
       <m-alert
         class="alert-demo-item"
         type="warning"
         title="Warning Alert"
-        description="This is some ddescription, not too long, just enough"
+        description="This is some description, not too long, just enough"
       ></m-alert>
       <m-alert
         class="alert-demo-item"
         type="danger"
         title="Danger Alert"
-        description="This is some ddescription, not too long, just enough"
+        description="This is some description, not too long, just enough"
       ></m-alert>
     </template>
     <template v-else-if="type === 'closable'">
       <m-alert 
         class="alert-demo-item"
-        type="warning"
-        title="Closable Alert"
+        type="info"
+        title="Closable Alert, try to close me!"
+        description="close me close me, dismiss me"
+        showIcon
+        closable
+      ></m-alert>
+      <m-alert 
+        class="alert-demo-item"
+        type="danger"
+        title="Closable Alert, try to close me!"
         showIcon
         closable
       ></m-alert>
