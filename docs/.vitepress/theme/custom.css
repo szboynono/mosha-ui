@@ -60,3 +60,7 @@
     background-position: center;
     background-attachment: fixed;
   }
+
+  .demo {
+    height: 28.5vh;
+  }

@@ -7,8 +7,4 @@ actionLink: /getting-started/introduction
 footer: MIT Licensed | Copyright © 2021 Tony Liu
 ---
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<div class="demo"></div>
