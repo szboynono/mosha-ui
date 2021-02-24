@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-
 import * as pkg from './package.json'
 import vue from '@vitejs/plugin-vue'
 

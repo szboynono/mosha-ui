@@ -23,8 +23,7 @@
     box-shadow: 10px 10px 10px  rgba(46, 54, 68, 0.03);
   }
 
-  .content {
-    padding: 10px;
+  /* .container {
     background-clip: padding-box;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur( 30px );
@@ -32,7 +31,7 @@
     background: rgba(255,255,255, 0.2) !important;
     background-clip: padding-box;
     box-shadow: 10px 10px 10px  rgba(46, 54, 68, 0.03);
-  }
+  } */
   
   .content img {
     border-radius: 10px;
