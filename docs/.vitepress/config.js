@@ -42,6 +42,7 @@ function getGuideSidebar() {
         { text: 'Alert', link: '/components/alert' },
         { text: 'Button', link: '/components/button' },
         { text: 'Container', link: '/components/container' },
+        { text: 'Message', link: '/components/message' },
       ]
     },
   ]

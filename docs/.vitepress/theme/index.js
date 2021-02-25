@@ -4,6 +4,7 @@ import './custom.css'
 import ButtonDemo from './components/ButtonDemo.vue'
 import AlertDemo from './components/AlertDemo.vue'
 import ContainerDemo from './components/ContainerDemo.vue'
+import MessageDemo from './components/MessageDemo.vue'
 
 export default {
   ...DefaultTheme,
@@ -11,6 +12,7 @@ export default {
     app.use(mosha),
     app.component(ButtonDemo.name, ButtonDemo),
     app.component(AlertDemo.name, AlertDemo),
-    app.component(ContainerDemo.name, ContainerDemo)
+    app.component(ContainerDemo.name, ContainerDemo),
+    app.component(MessageDemo.name, MessageDemo)
   }
 }
