@@ -1,30 +1,34 @@
-import { ComponentPublicInstance, createApp } from 'vue'
+import { createApp, createVNode, render } from 'vue'
+import Container from '../container';
 import Message from './MMessage.vue'
 
 export type MessageType = 'success' | 'error' | 'default'
 
-const _messages: ComponentPublicInstance[]  = [];
+const instances: any[] = [];
+let msgId = 0;
 
 export const createMessage = (message: string, type: MessageType, timeout = 2000) => {
-  const mountNode = document.createElement('div')
-  document.body.appendChild(mountNode)
+  const id = msgId++;
 
-  const messageInstance = createApp(Message, {
-    message,
-    type
+
+  let verticalOffset = 20
+  instances.forEach((instance: any) => {
+    const offsetHeight = instance.el.offsetHeight
+    verticalOffset += (offsetHeight || 0) + 16
   })
-  const mountedInstance = messageInstance.mount(mountNode)
-  
-  _messages.push(mountedInstance);
-  console.log(_messages.length)
+  verticalOffset += 16
 
-  setTimeout(() => {
-    const foundIndex = _messages.findIndex((instance: ComponentPublicInstance) => {
-      instance === mountedInstance
-    })
-    console.log(foundIndex)
-    messageInstance.unmount(mountNode)
-    document.body.removeChild(mountNode)
-  }, timeout)
+  const container = document.createElement('div')
+
+  const messageInstance = createVNode(Message, { id, message, type, timeout, offset: verticalOffset })
+
+  render(messageInstance, container)
+  instances.push(messageInstance);
+  document.body.appendChild(container)
+  // setTimeout(() => {
+  //   messageInstance.unmount(mountNode)
+  //   document.body.removeChild(mountNode)
+  // }, timeout)
 }
+
 
