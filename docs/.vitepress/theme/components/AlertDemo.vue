@@ -64,12 +64,14 @@
         type="warning"
         title="Warning Alert"
         description="This is some description, not too long, just enough"
+        showIcon
       ></m-alert>
       <m-alert
         class="alert-demo-item"
         type="danger"
         title="Danger Alert"
         description="This is some description, not too long, just enough"
+        showIcon
       ></m-alert>
     </template>
     <template v-else-if="type === 'closable'">

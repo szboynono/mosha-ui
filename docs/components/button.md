@@ -30,7 +30,7 @@ Just a button
 <m-button type="primary" outline>Primary</m-button>
 <m-button type="success" outline>Success</m-button>
 <m-button type="warning" outline>Warning</m-button>
-<m-button type="danger" outline>Danger</m-button
+<m-button type="danger" outline>Danger</m-button>
 ```
 
 ## Disabled
