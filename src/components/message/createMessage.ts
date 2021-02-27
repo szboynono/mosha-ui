@@ -1,9 +1,9 @@
-import { ComponentPublicInstance, createVNode, render } from 'vue'
+import { createVNode, render } from 'vue'
 import Message from './MMessage.vue'
 
 export type MessageType = 'success' | 'error' | 'default'
 
-const instances: any[] = [];
+const messages: any[] = [];
 let msgId = 0;
 
 export const createMessage = (message: string, type: MessageType, timeout = 2000) => {
@@ -11,42 +11,45 @@ export const createMessage = (message: string, type: MessageType, timeout = 2000
 
 
   let verticalOffset = 20
-  instances.forEach((instance: any) => {
-    const offsetHeight = instance.el.offsetHeight
+
+  messages.forEach(({messageVNode}) => {
+    const offsetHeight = (messageVNode.el as HTMLElement).offsetHeight
     verticalOffset += (offsetHeight || 0) + 16
   })
   verticalOffset += 16
 
   const container = document.createElement('div')
 
-  const messageInstance = createVNode(Message, { id, message, type, timeout, offset: verticalOffset, onClose: close })
-
-  render(messageInstance, container)
-  instances.push(messageInstance);
-  document.body.appendChild(container)
-
-  return {
-    close: () => (messageInstance.component?.proxy as ComponentPublicInstance<{visible: boolean;}>).visible = false,
-  }
+  const messageVNode = createVNode(Message, 
+    { 
+      id, 
+      message, 
+      type, 
+      timeout, 
+      offset: verticalOffset, 
+      onClose: () => { close(id) } 
+    }
+  )
+  
+  render(messageVNode, container)
+  messages.push({messageVNode, container});
+  document.body.appendChild(container);
 }
 
 const close = (id: number) => {
-  const instanceIndex = instances.findIndex(instance => instance.component.props.id === id)
+  const index = messages.findIndex(({messageVNode}) => id === messageVNode.props.id)
+  const { container, messageVNode } = messages[index]
+  const height  = messageVNode.el.offsetHeight;
 
-  if(instanceIndex === -1) return;
+  if (index === -1) return
+  messages.splice(index, 1);
+  document.body.removeChild(container)
 
-  const currentInstance = instances[instanceIndex]
-  const instanceOffset  = currentInstance.el.offsetHeight;
-  instances.splice(instanceIndex, 1);
-  console.log(instances)
-  // const len = instances.length
-  // if (len < 1) return
-  // for (let i = instanceIndex; i < len; i++) {
-  //   const pos =
-  //     parseInt(instances[i].el.style['top'], 10) - instanceOffset - 16
-
-  //   instances[i].component.props.offset = pos
-  // }
+  for (let i = index; i < messages.length; i++) {
+    const { messageVNode } = messages[i];
+    const pos = parseInt(messageVNode.el.style['top'], 10) - height - 16;
+    messageVNode.component.props.offset = pos
+  }
 }
 
 
