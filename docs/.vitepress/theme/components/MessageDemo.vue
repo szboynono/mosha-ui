@@ -8,7 +8,7 @@ export default {
   name: 'MessageDemo',
   methods: {
     showMsg() {
-      this.$MMessage('yoyo', 'success')
+      this.$MMessage({message: 'This is some dummy message here'})
     },
   },
 }

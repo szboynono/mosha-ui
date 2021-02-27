@@ -7,6 +7,7 @@ Just an alert
 <AlertDemo type="basic" />
 
 ```html
+<m-alert title="Info Alert" />
 <m-alert type='info' title="Info Alert" />
 <m-alert type='success' title="Success Alert" />
 <m-alert type='warning' title="Warning Alert" />
@@ -18,6 +19,7 @@ Just an alert
 <AlertDemo type="icon" />
 
 ```html
+<m-alert title="Default Alert" showIcon />
 <m-alert type='info' title="Info Alert" showIcon />
 <m-alert type='success' title="Success Alert" showIcon />
 <m-alert type='warning' title="Warning Alert" showIcon />
@@ -29,6 +31,7 @@ Just an alert
 <AlertDemo type="description" />
 
 ```html
+<m-alert title="Default Alert" description="This is some ddescription, not too long, just enough" showIcon />
 <m-alert type="info" title="Info Alert" description="This is some ddescription, not too long, just enough" showIcon />
 <m-alert type="success" title="Success Alert" description="This is some ddescription, not too long, just enough" showIcon />
 <m-alert type="warning" title="Warning Alert" description="This is some ddescription, not too long, just enough" showIcon />

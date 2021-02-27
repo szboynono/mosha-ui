@@ -1,6 +1,7 @@
 <template>
   <div class="alert-demo">
     <template v-if="type === 'basic'">
+      <m-alert class="alert-demo-item" title="Default Alert"></m-alert>
       <m-alert class="alert-demo-item" type="info" title="Info Alert"></m-alert>
       <m-alert
         class="alert-demo-item"
@@ -19,6 +20,11 @@
       ></m-alert>
     </template>
     <template v-else-if="type === 'icon'">
+      <m-alert
+        class="alert-demo-item"
+        title="Default Alert"
+        showIcon
+      ></m-alert>
       <m-alert
         class="alert-demo-item"
         type="info"
@@ -45,6 +51,12 @@
       ></m-alert>
     </template>
     <template v-else-if="type === 'description'">
+      <m-alert
+        class="alert-demo-item"
+        title="Default Alert"
+        description="This is some description, not too long, just enough"
+        showIcon
+      ></m-alert>
       <m-alert
         class="alert-demo-item"
         type="info"

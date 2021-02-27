@@ -34,6 +34,14 @@
             highlight_off
           </span>
         </template>
+        <template v-else-if="type === 'default' && showIcon">
+          <span
+            class="material-icons-round"
+            :class="description ? 'withDescription' : null"
+          >
+            info
+          </span>
+        </template>
         <div class="mosha__alert__content">
           <div class="mosha__alert__content__title">{{ title }}</div>
           <div class="mosha__alert__content__desc">{{ description }}</div>
@@ -51,7 +59,7 @@
 <script lang="ts">
 import { PropType, defineComponent, ref } from 'vue'
 
-type AlertType = 'info' | 'danger' | 'warning' | 'success'
+type AlertType = 'info' | 'danger' | 'warning' | 'success' | 'default'
 
 export default defineComponent({
   name: 'm-alert',
@@ -59,6 +67,7 @@ export default defineComponent({
     type: {
       type: String as PropType<AlertType>,
       required: true,
+      default: 'default'
     },
     showIcon: {
       type: Boolean,

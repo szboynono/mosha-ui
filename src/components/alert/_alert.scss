@@ -5,11 +5,13 @@
     font-family: 'Roboto', sans-serif;
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
+    background: rgb(255,255,255);
+    background: linear-gradient(145deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
     background-clip: padding-box;
     box-shadow: 0px 1px 24px -1px rgba(0, 0, 0, 0.1);
     padding: 8px 16px;
     border-radius: 8px;
-    color: #F5F5F5;
+    color: black;
 
     &__close-icon::before {
         cursor: pointer;
@@ -58,6 +60,12 @@
         &.withDescription {
             font-size: 24px;
             top: 0px;
+        }
+    }
+
+    &.default {
+        & .material-icons-round {
+            color: #2C3E50;
         }
     }
 

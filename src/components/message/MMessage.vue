@@ -3,8 +3,7 @@
     <div 
       v-show="visible"
       class="mosha__message"
-      :style="customStyle">{{ id }}
-      <button @click="onClose">close</button>
+      :style="customStyle">{{ message }}
     </div>
   </transition>
 </template>

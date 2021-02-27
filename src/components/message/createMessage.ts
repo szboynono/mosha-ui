@@ -1,17 +1,23 @@
 import { createVNode, render } from 'vue'
 import Message from './MMessage.vue'
 
-export type MessageType = 'success' | 'error' | 'default'
+export type MessageType = 'info' | 'danger' | 'warning' | 'success' | 'default'
 
 export interface MessageObject {
   messageVNode: any
   container: HTMLDivElement;
 }
 
+export interface MessageOptions {
+  message: string,
+  type?: MessageType,
+  timeout?: number
+}
+
 const messages: MessageObject[] = [];
 let msgId = 0;
 
-export const createMessage = (message: string, type: MessageType, timeout = 5000) => {
+export const createMessage = (options: MessageOptions) => {
   const id = msgId++;
 
 
@@ -25,7 +31,9 @@ export const createMessage = (message: string, type: MessageType, timeout = 5000
 
   const container = document.createElement('div')
   document.body.appendChild(container);
-
+  
+  const {message, type = 'default', timeout = 5000} = options;
+  
   const messageVNode = createVNode(Message, 
     { 
       id, 
