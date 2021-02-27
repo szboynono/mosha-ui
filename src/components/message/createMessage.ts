@@ -3,7 +3,12 @@ import Message from './MMessage.vue'
 
 export type MessageType = 'success' | 'error' | 'default'
 
-const messages: any[] = [];
+export interface MessageObject {
+  messageVNode: any
+  container: HTMLDivElement;
+}
+
+const messages: MessageObject[] = [];
 let msgId = 0;
 
 export const createMessage = (message: string, type: MessageType, timeout = 5000) => {
@@ -44,9 +49,15 @@ export const createMessage = (message: string, type: MessageType, timeout = 5000
 const close = (id: number) => {
   const index = messages.findIndex(({messageVNode}) => id === messageVNode.props.id)
   if(!messages[index]) return;
-  const { container, messageVNode } = messages[index];
+
+  const { container, messageVNode } = messages[index] as MessageObject;
+
+  if(!messageVNode.el) return;
   const height  = messageVNode.el.offsetHeight;
+
+  if(!messageVNode.component) return ;
   messageVNode.component.props.visible = false;
+
   if (index === -1) return
   messages.splice(index, 1);
 
@@ -55,8 +66,12 @@ const close = (id: number) => {
   }, 300)
 
   for (let i = index; i < messages.length; i++) {
-    const { messageVNode } = messages[i];
+    const { messageVNode } = messages[i] as MessageObject;
+
+    if(!messageVNode.el) return;
     const pos = parseInt(messageVNode.el.style['top'], 10) - height - 16;
+
+    if(!messageVNode.component) return;
     messageVNode.component.props.offset = pos
   }
 }
