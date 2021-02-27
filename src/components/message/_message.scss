@@ -11,3 +11,10 @@
   z-index: 100;
   width: max-content;
 }
+
+.message-fade-enter-active, .message-fade-leave-active {
+  transition: all 2s ease;
+}
+.message-fade-enter, .message-fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
