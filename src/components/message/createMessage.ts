@@ -37,7 +37,7 @@ export const createMessage = (message: string, type: MessageType, timeout = 2000
   messages.push({messageVNode, container});
 
   if(messageVNode.component) {
-    messageVNode.component.props.visible = true;
+    messageVNode.component.props.visible = true
   }
 }
 
@@ -49,13 +49,16 @@ const close = (id: number) => {
   console.log(messageVNode)
   if (index === -1) return
   messages.splice(index, 1);
-  // document.body.removeChild(container)
 
-  // for (let i = index; i < messages.length; i++) {
-  //   const { messageVNode } = messages[i];
-  //   const pos = parseInt(messageVNode.el.style['top'], 10) - height - 16;
-  //   messageVNode.component.props.offset = pos
-  // }
+  setTimeout(() => {
+    document.body.removeChild(container)
+  }, 300)
+
+  for (let i = index; i < messages.length; i++) {
+    const { messageVNode } = messages[i];
+    const pos = parseInt(messageVNode.el.style['top'], 10) - height - 16;
+    messageVNode.component.props.offset = pos
+  }
 }
 
 

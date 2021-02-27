@@ -1,6 +1,8 @@
 <template>
-  <transition name="message-fade">
-    <div class="mosha__message"
+  <transition name="fade">
+    <div 
+      v-show="visible"
+      class="mosha__message"
       :style="customStyle">{{ id }}
       <button @click="onClose">close</button>
       <button @click="onVisible">visible</button>
@@ -9,7 +11,7 @@
 </template>
 
 <script lang='ts'>
-import { computed, defineComponent, PropType, ref, watchEffect } from 'vue';
+import { computed, defineComponent, onMounted, PropType, ref, watchEffect } from 'vue';
 import { MessageType } from './createMessage';
 export default defineComponent ({
   name: 'm-message',
@@ -34,7 +36,9 @@ export default defineComponent ({
   },
   setup(props) {
     const vis = ref(false)
-
+    onMounted(() => {
+      vis.value = true;
+    })
     const customStyle = computed(() => {
       return {
         top: `${props.offset}px`,
