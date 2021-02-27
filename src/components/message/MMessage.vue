@@ -1,21 +1,46 @@
 <template>
   <transition name="fade">
-    <div 
-      v-show="visible"
-      class="mosha__message"
-      :style="customStyle">{{ message }}
+    <div v-show="visible" class="mosha__message" :class="type" :style="customStyle">
+      <template v-if="type === 'success'">
+        <span class="material-icons-round"> check_circle </span>
+      </template>
+      <template v-else-if="type === 'warning'">
+        <span class="material-icons-round"> info </span>
+      </template>
+      <template v-else-if="type === 'info'">
+        <span class="material-icons-round"> info </span>
+      </template>
+      <template v-else-if="type === 'danger'">
+        <span class="material-icons-round"> highlight_off </span>
+      </template>
+      <template v-else-if="type === 'default'">
+        <span class="material-icons-round"> info </span>
+      </template>
+      <p>{{ message }}</p>
+      <span
+        class="mosha__message__close-icon"
+        @click="onClose"
+      ></span>
     </div>
   </transition>
 </template>
 
 <script lang='ts'>
-import { computed, defineComponent, onMounted, PropType, watchEffect } from 'vue';
-import { MessageType } from './createMessage';
-export default defineComponent ({
+import {
+  PropType,
+  computed,
+  defineComponent,
+  onMounted,
+  watchEffect,
+} from 'vue'
+import { MessageType } from './createMessage'
+
+
+export default defineComponent({
   name: 'm-message',
   data() {
     return {
-      show: false
+      show: false,
     }
   },
   props: {
@@ -23,15 +48,18 @@ export default defineComponent ({
     message: String,
     type: {
       type: String as PropType<MessageType>,
-      default: 'default'
+      default: 'default',
     },
     onClose: {
       type: Function as PropType<() => void>,
       required: true,
     },
     offset: Number,
-    id: Number,
-    timeout: Number
+    id: {
+      type: Number,
+      required: true
+    },
+    timeout: Number,
   },
   setup(props) {
     onMounted(() => {
@@ -45,9 +73,8 @@ export default defineComponent ({
       }
     })
 
-    watchEffect(() => {
-    })
+    watchEffect(() => {})
     return { customStyle }
-  }
+  },
 })
 </script>

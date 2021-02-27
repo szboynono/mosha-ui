@@ -33,7 +33,7 @@ export const createMessage = (options: MessageOptions) => {
   document.body.appendChild(container);
   
   const {message, type = 'default', timeout = 5000} = options;
-  
+
   const messageVNode = createVNode(Message, 
     { 
       id, 

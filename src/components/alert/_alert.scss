@@ -19,6 +19,9 @@
         color: rgba(0,0,0,.45);
         transition: color .3s;
         font-weight: 300;
+        font-size: 20px;
+        position: relative;
+        top: -2px;
     }
 
     &__close-icon:hover::before {
@@ -53,9 +56,8 @@
 
     & .material-icons-round {
         margin-right: 8px;
-        font-size: 16px;
+        font-size: 20px;
         position: relative;
-        top: 2px;
 
         &.withDescription {
             font-size: 24px;
