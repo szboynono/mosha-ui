@@ -1,4 +1,5 @@
 .mosha__message {
+  min-width: 320px;
   display: flex;
   position: fixed;
   right: 0;
@@ -10,7 +11,7 @@
   color: black;
   z-index: 100;
   width: max-content;
-  transition: all .3s ease-out;
+  transition: all .3s ease-in-out;
   background: rgb(255,255,255);
   background: linear-gradient(145deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
   border-radius: 10px;
@@ -88,10 +89,10 @@
 
 
 
-.fade-enter-active, .fade-leave-active {
+.mosha__slide-enter-active, .mosha__slide-leave-active {
   transform: translateY(-100%);
   opacity: 0;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.mosha__slide-enter, .mosha__slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }

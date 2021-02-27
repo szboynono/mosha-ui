@@ -12,7 +12,14 @@ export default {
   name: 'MessageDemo',
   methods: {
     showMsgDefault() {
-      this.$MMessage({message: 'This is some dummy message here'})
+      this.$MMessage(
+        {
+          message: 'This is some dummy message here',
+          onClose: () => {
+            console.log('closed')
+          } 
+        }
+      )
     },
     showMsgInfo() {
       this.$MMessage({message: 'This is some dummy message here', type: 'info'})

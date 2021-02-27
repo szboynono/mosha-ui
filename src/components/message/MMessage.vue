@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <transition name="mosha__slide">
     <div v-show="visible" class="mosha__message" :class="type" :style="customStyle">
       <template v-if="type === 'success'">
         <span class="material-icons-round"> check_circle </span>
@@ -18,8 +18,9 @@
       </template>
       <p>{{ message }}</p>
       <span
+        v-if="closable"
         class="mosha__message__close-icon"
-        @click="onClose"
+        @click="onCloseHandler"
       ></span>
     </div>
   </transition>
@@ -31,7 +32,7 @@ import {
   computed,
   defineComponent,
   onMounted,
-  watchEffect,
+  onUnmounted,
 } from 'vue'
 import { MessageType } from './createMessage'
 
@@ -50,9 +51,13 @@ export default defineComponent({
       type: String as PropType<MessageType>,
       default: 'default',
     },
-    onClose: {
+    onCloseHandler: {
       type: Function as PropType<() => void>,
       required: true,
+    },
+    // For client
+    onClose: {
+      type: Function as PropType<() => void>,
     },
     offset: Number,
     id: {
@@ -60,20 +65,27 @@ export default defineComponent({
       required: true
     },
     timeout: Number,
+    closable: Boolean
   },
   setup(props) {
     onMounted(() => {
       setTimeout(() => {
-        props.onClose()
+        props.onCloseHandler()
       }, props.timeout)
     })
+
+    onUnmounted(() => {
+      if(props.onClose) {
+        props.onClose()
+      }
+    })
+
     const customStyle = computed(() => {
       return {
         top: `${props.offset}px`,
       }
     })
 
-    watchEffect(() => {})
     return { customStyle }
   },
 })
