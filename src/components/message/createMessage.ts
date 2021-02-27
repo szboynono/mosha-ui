@@ -6,7 +6,7 @@ export type MessageType = 'success' | 'error' | 'default'
 const messages: any[] = [];
 let msgId = 0;
 
-export const createMessage = (message: string, type: MessageType, timeout = 2000) => {
+export const createMessage = (message: string, type: MessageType, timeout = 5000) => {
   const id = msgId++;
 
 
@@ -43,10 +43,10 @@ export const createMessage = (message: string, type: MessageType, timeout = 2000
 
 const close = (id: number) => {
   const index = messages.findIndex(({messageVNode}) => id === messageVNode.props.id)
+  if(!messages[index]) return;
   const { container, messageVNode } = messages[index];
   const height  = messageVNode.el.offsetHeight;
   messageVNode.component.props.visible = false;
-  console.log(messageVNode)
   if (index === -1) return
   messages.splice(index, 1);
 
