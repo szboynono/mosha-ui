@@ -43,6 +43,7 @@ function getGuideSidebar() {
         { text: 'Button', link: '/components/button' },
         { text: 'Container', link: '/components/container' },
         { text: 'Message', link: '/components/message' },
+        { text: 'Notification', link: '/components/notification' },
       ]
     },
   ]

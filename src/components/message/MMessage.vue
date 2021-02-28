@@ -48,11 +48,6 @@ import { MessageType } from './createMessage'
 
 export default defineComponent({
   name: 'm-message',
-  data() {
-    return {
-      show: false,
-    }
-  },
   props: {
     visible: Boolean,
     message: String,

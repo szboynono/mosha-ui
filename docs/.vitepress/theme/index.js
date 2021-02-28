@@ -5,6 +5,7 @@ import ButtonDemo from './components/ButtonDemo.vue'
 import AlertDemo from './components/AlertDemo.vue'
 import ContainerDemo from './components/ContainerDemo.vue'
 import MessageDemo from './components/MessageDemo.vue'
+import NotificationDemo from './components/NotificationDemo.vue'
 
 export default {
   ...DefaultTheme,
@@ -14,5 +15,6 @@ export default {
     app.component(AlertDemo.name, AlertDemo),
     app.component(ContainerDemo.name, ContainerDemo),
     app.component(MessageDemo.name, MessageDemo)
+    app.component(NotificationDemo.name, NotificationDemo)
   }
 }
