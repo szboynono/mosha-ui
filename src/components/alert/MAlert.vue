@@ -43,8 +43,8 @@
           </span>
         </template>
         <div class="mosha__alert__content">
-          <div class="mosha__alert__content__title">{{ title }}</div>
-          <div class="mosha__alert__content__desc">{{ description }}</div>
+          <div class="mosha__alert__content__title">{{title}}</div>
+          <div class="mosha__alert__content__desc">{{description}}</div>
         </div>
       </div>
       <span

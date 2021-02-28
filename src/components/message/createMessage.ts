@@ -71,9 +71,9 @@ const close = (id: number) => {
 
   if (!messageVNode.component) return;
   messageVNode.component.props.visible = false;
-  render(null, container)
 
   setTimeout(() => {
+    render(null, container)
     document.body.removeChild(container)
   }, 300)
 
