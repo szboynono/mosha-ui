@@ -91,13 +91,3 @@
       }
   }
 }
-
-
-
-.mosha__slide-enter-active, .mosha__slide-leave-active {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-.mosha__slide-enter, .mosha__slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}

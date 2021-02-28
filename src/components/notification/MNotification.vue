@@ -1,5 +1,6 @@
 <template>
-  <div class="mosha__notification" :style="customStyle" v-if="visible">
+  <transition :name="transitionType">
+    <div class="mosha__notification" :style="customStyle" v-if="visible">
       Notification
       <div
         v-if="closable"
@@ -7,6 +8,7 @@
         @click="onCloseHandler"
       ></div>
     </div>
+  </transition>
 </template>
 
 <script lang='ts'>
@@ -49,6 +51,13 @@ export default defineComponent({
     closable: Boolean,
   },
   setup(props) {
+    const transitionType = computed(() => {
+        if(props.position.endsWith('left')) {
+            return 'mosha__slide-right'
+        } else {
+            return 'mosha__slide-left'
+        }
+    })
     const customStyle = computed(() => {
       switch (props.position) {
         case 'top-left':
@@ -74,7 +83,7 @@ export default defineComponent({
       }
     })
 
-    return { customStyle }
+    return { customStyle, transitionType }
   },
 })
 </script>
