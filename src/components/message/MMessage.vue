@@ -1,6 +1,12 @@
 <template>
   <transition name="mosha__slide">
-    <div v-show="visible" class="mosha__message" :class="type" :style="customStyle">
+    <div 
+      v-show="visible"
+      class="mosha__message"
+      :class="type" 
+      :style="customStyle"
+      @mouseenter="stopTimer"
+      @mouseleave="startTimer">
       <template v-if="type === 'success'">
         <span class="material-icons-round"> check_circle </span>
       </template>
@@ -33,6 +39,7 @@ import {
   defineComponent,
   onMounted,
   onUnmounted,
+  ref,
 } from 'vue'
 import { MessageType } from './createMessage'
 
@@ -68,10 +75,10 @@ export default defineComponent({
     closable: Boolean
   },
   setup(props) {
+    let timer = ref<number | null>(null);
+
     onMounted(() => {
-      setTimeout(() => {
-        props.onCloseHandler()
-      }, props.timeout)
+      startTimer()
     })
 
     onUnmounted(() => {
@@ -86,7 +93,18 @@ export default defineComponent({
       }
     })
 
-    return { customStyle }
+    const stopTimer = () => {
+      if(!timer.value) return
+      clearTimeout(timer.value)
+    }
+
+    const startTimer = () => {
+      timer.value = setTimeout(() => {
+        props.onCloseHandler()
+      }, props.timeout)
+    }
+
+    return { customStyle, stopTimer, startTimer }
   },
 })
 </script>
