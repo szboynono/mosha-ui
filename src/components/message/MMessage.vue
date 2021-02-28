@@ -7,27 +7,29 @@
       :style="customStyle"
       @mouseenter="stopTimer"
       @mouseleave="startTimer">
-      <template v-if="type === 'success'">
-        <span class="material-icons-round"> check_circle </span>
-      </template>
-      <template v-else-if="type === 'warning'">
-        <span class="material-icons-round"> info </span>
-      </template>
-      <template v-else-if="type === 'info'">
-        <span class="material-icons-round"> info </span>
-      </template>
-      <template v-else-if="type === 'danger'">
-        <span class="material-icons-round"> highlight_off </span>
-      </template>
-      <template v-else-if="type === 'default'">
-        <span class="material-icons-round"> info </span>
-      </template>
-      <p>{{ message }}</p>
-      <span
+      <div class="mosha__message__content">
+        <template v-if="type === 'success'">
+          <span class="material-icons-round"> check_circle </span>
+        </template>
+        <template v-else-if="type === 'warning'">
+          <span class="material-icons-round"> info </span>
+        </template>
+        <template v-else-if="type === 'info'">
+          <span class="material-icons-round"> info </span>
+        </template>
+        <template v-else-if="type === 'danger'">
+          <span class="material-icons-round"> highlight_off </span>
+        </template>
+        <template v-else-if="type === 'default'">
+          <span class="material-icons-round"> info </span>
+        </template>
+        <p>{{ message }}</p>
+      </div>
+      <div
         v-if="closable"
         class="mosha__message__close-icon"
         @click="onCloseHandler"
-      ></span>
+      ></div>
     </div>
   </transition>
 </template>
@@ -78,7 +80,7 @@ export default defineComponent({
     let timer = ref<number | null>(null);
 
     onMounted(() => {
-      startTimer()
+      // startTimer()
     })
 
     onUnmounted(() => {
@@ -99,9 +101,9 @@ export default defineComponent({
     }
 
     const startTimer = () => {
-      timer.value = setTimeout(() => {
-        props.onCloseHandler()
-      }, props.timeout)
+      // timer.value = setTimeout(() => {
+      //   props.onCloseHandler()
+      // }, props.timeout)
     }
 
     return { customStyle, stopTimer, startTimer }
