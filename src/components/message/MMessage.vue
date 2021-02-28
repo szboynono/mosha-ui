@@ -80,7 +80,7 @@ export default defineComponent({
     let timer = ref<number | null>(null);
 
     onMounted(() => {
-      // startTimer()
+      startTimer()
     })
 
     onUnmounted(() => {
@@ -101,9 +101,9 @@ export default defineComponent({
     }
 
     const startTimer = () => {
-      // timer.value = setTimeout(() => {
-      //   props.onCloseHandler()
-      // }, props.timeout)
+      timer.value = setTimeout(() => {
+        props.onCloseHandler()
+      }, props.timeout)
     }
 
     return { customStyle, stopTimer, startTimer }
