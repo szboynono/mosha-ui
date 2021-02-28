@@ -1,5 +1,12 @@
 <template>
-  <div class="mosha__notification" :style="customStyle">Notification</div>
+  <div class="mosha__notification" :style="customStyle" v-if="visible">
+      Notification
+      <div
+        v-if="closable"
+        class="mosha__message__close-icon"
+        @click="onCloseHandler"
+      ></div>
+    </div>
 </template>
 
 <script lang='ts'>
@@ -64,9 +71,6 @@ export default defineComponent({
             right: 0,
             top: `${props.offset}px`,
           }
-      }
-      return {
-        top: `${props.offset}px`,
       }
     })
 

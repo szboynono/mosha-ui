@@ -13,28 +13,32 @@ export default {
             this.$MNotification({
                 title: 'This is a title',
                 description: 'This is a description',
-                position: 'top-left'
+                position: 'top-left',
+                closable: true
             })
         },
         showNotificationTopRight() {
             this.$MNotification({
                 title: 'This is a title',
                 description: 'This is a description',
-                position: 'top-right'
+                position: 'top-right',
+                closable: true
             })
         },
         showNotificationBottomLeft() {
             this.$MNotification({
                 title: 'This is a title',
                 description: 'This is a description',
-                position: 'bottom-left'
+                position: 'bottom-left',
+                closable: true
             })
         },
         showNotificationBottomRight() {
             this.$MNotification({
                 title: 'This is a title',
                 description: 'This is a description',
-                position: 'bottom-right'
+                position: 'bottom-right',
+                closable: true
             })
         }
     }

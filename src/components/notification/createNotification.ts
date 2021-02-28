@@ -55,7 +55,7 @@ export const createNotification = (options: NotificationOptions) => {
       visible: false,
       position,
       onClose,
-      onCloseHandler: () => { close(id) }
+      onCloseHandler: () => { close(id, position) }
     }
   )
 
@@ -68,6 +68,33 @@ export const createNotification = (options: NotificationOptions) => {
   }
 }
 
-const close = (id: number) => {
-  console.log(id)
+const close = (id: number, position: Position) => {
+  const notificationPositionArr = notifications[position];
+
+  const index = notificationPositionArr.findIndex(({ notificationVNode }) => id === notificationVNode.props.id)
+
+  if (index === -1) return ;
+  const { container, notificationVNode } = notificationPositionArr[index] as NotificationObject;
+  
+  const height = notificationVNode.el.offsetHeight;
+
+  notifications[position].splice(index, 1)
+  notificationVNode.component.props.visible = false;
+
+  setTimeout(() => {
+    render(null, container)
+    document.body.removeChild(container)
+  }, 300)
+
+  for (let i = index; i < notificationPositionArr.length; i++) {
+    const { notificationVNode } = notificationPositionArr[i] as NotificationObject;
+
+    if (!notificationVNode.el) return;
+    
+    const verticalPos: string = position.split('-')[0] || 'top'
+    const pos = parseInt(notificationVNode.el.style[verticalPos], 10) - height - 16;
+
+    if (!notificationVNode.component) return;
+    notificationVNode.component.props.offset = pos
+  }
 }
