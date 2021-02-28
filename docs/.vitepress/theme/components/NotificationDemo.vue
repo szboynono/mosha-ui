@@ -14,7 +14,9 @@ export default {
                 title: 'This is a title',
                 description: 'This is a description',
                 position: 'top-left',
-                closable: true
+                type: 'info',
+                closable: true,
+                showIcon: true
             })
         },
         showNotificationTopRight() {
@@ -22,7 +24,9 @@ export default {
                 title: 'This is a title',
                 description: 'This is a description',
                 position: 'top-right',
-                closable: true
+                type: 'danger',
+                closable: true,
+                showIcon: true
             })
         },
         showNotificationBottomLeft() {
@@ -38,7 +42,9 @@ export default {
                 title: 'This is a title',
                 description: 'This is a description',
                 position: 'bottom-right',
-                closable: true
+                type: 'warning',
+                closable: true,
+                showIcon: true
             })
         }
     }

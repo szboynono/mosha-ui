@@ -14,6 +14,7 @@ export interface NotificationOptions {
   timeout?: number,
   closable?: Boolean,
   position?: Position,
+  showIcon?: Boolean,
   onClose?: () => void
 }
 
@@ -41,7 +42,7 @@ export const createNotification = (options: NotificationOptions) => {
   const container = document.createElement('div')
   document.body.appendChild(container);
 
-  const { title, description, type = 'default', timeout = 5000, closable = false, onClose } = options;
+  const { title, description, type = 'default', timeout = 5000, closable, showIcon, onClose } = options;
 
   const notificationVNode = createVNode(Notification,
     {
@@ -51,6 +52,7 @@ export const createNotification = (options: NotificationOptions) => {
       type,
       timeout,
       closable,
+      showIcon,
       offset: verticalOffset,
       visible: false,
       position,
