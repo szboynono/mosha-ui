@@ -21,6 +21,23 @@
             Danger
         </m-button>
     </template>
+    <template v-else-if="mode==='position'">
+        <m-button @click="showNotificationTopRight" type="primary" outline>
+            Top Right
+        </m-button>
+        <m-button @click="showNotificationBottomRight" type="primary" outline>
+            Bottom Right
+        </m-button>
+        <m-button @click="showNotificationBottomLeft" type="primary" outline>
+            Bottom Left
+        </m-button>
+        <m-button @click="showNotificationTopLeft" type="primary" outline>
+            Top Left
+        </m-button>
+    </template>
+    <template v-else-if="mode==='closable'">
+        <m-button @click="showNotificationNotClosable" type="primary" outline>Hide close button</m-button>
+    </template>
 </template>
 
 <script>
@@ -72,6 +89,40 @@ export default {
                 type: 'danger'
             })
         },
+        showNotificationTopRight() {
+            this.$MNotification({
+                title: 'Top Right',
+                description: 'This is a description',
+            })
+        },
+        showNotificationBottomRight() {
+            this.$MNotification({
+                title: 'Bottom Right',
+                description: 'This is a description',
+                position: 'bottom-right'
+            })
+        },
+        showNotificationBottomLeft() {
+            this.$MNotification({
+                title: 'Bottom Left',
+                description: 'This is a description',
+                position: 'bottom-left'
+            })
+        },
+        showNotificationTopLeft() {
+            this.$MNotification({
+                title: 'Top Left',
+                description: 'This is a description',
+                position: 'top-left'
+            })
+        },
+        showNotificationNotClosable() {
+            this.$MNotification({
+                title: 'Hide close button',
+                description: 'This is a description',
+                closable: false
+            })
+        }
     }
 }
 </script>

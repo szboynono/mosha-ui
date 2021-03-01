@@ -17,7 +17,7 @@
 <script lang="ts">
 import { PropType, defineComponent } from 'vue'
 
-export type BtnType = 'primary' | 'danger' | 'warning'
+export type BtnType = 'primary' | 'danger' | 'warning' | 'default'
 export type BtnSize = 'lg' | 'sm'
 
 export default defineComponent({
@@ -25,7 +25,8 @@ export default defineComponent({
   props: {
     type: {
       type: String as PropType<BtnType>,
-      required: true,
+      required: false,
+      default: 'default',
       validator: (value: BtnType) => {
         return ['success', 'warning', 'danger', 'primary'].indexOf(value) !== -1
       },
