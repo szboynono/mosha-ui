@@ -177,3 +177,33 @@ export default {
 }
 </script>
 ```
+
+## onClose
+
+You can pass a function to have it called right after the message disappears
+
+<NotificationDemo mode="closeHook" />
+
+```ts
+<template>
+  <m-button @click="showNotificationCloseHook" type="primary" outline>
+    Hook into on Close
+  </m-button>
+</template>
+
+<script>
+export default {
+    methods: {
+        showNotificationCloseHook() {
+            this.$MNotification({
+                title: 'Hook into the onClose',
+                description: 'Alert after close, try to close it or just wait',
+                onClose: () => {
+                  alert('closed')
+                }
+            })
+        }
+    }
+}
+</script>
+```

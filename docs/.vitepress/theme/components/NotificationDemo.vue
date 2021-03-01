@@ -38,6 +38,9 @@
     <template v-else-if="mode==='closable'">
         <m-button class="notification-demo__item" @click="showNotificationNotClosable" type="primary" outline>Hide close button</m-button>
     </template>
+    <template v-else-if="mode==='closeHook'">
+        <m-button class="notification-demo__item" @click="showNotificationCloseHook" type="primary" outline>Hook into onClose</m-button>
+    </template>
 </template>
 
 <script>
@@ -121,6 +124,15 @@ export default {
                 title: 'Hide close button',
                 description: 'This is a description',
                 closable: false
+            })
+        },
+        showNotificationCloseHook() {
+            this.$MNotification({
+                title: 'Hook into the onClose',
+                description: 'Alert after close, try to close it or just wait',
+                onClose: () => {
+                    alert('closed')
+                }
             })
         }
     }

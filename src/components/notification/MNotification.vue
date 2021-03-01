@@ -41,7 +41,7 @@
 </template>
 
 <script lang='ts'>
-import { PropType, computed, defineComponent, onMounted, ref } from 'vue'
+import { PropType, computed, defineComponent, onMounted, ref, onUnmounted } from 'vue'
 
 import { Position } from './types'
 
@@ -95,6 +95,12 @@ export default defineComponent({
 
     onMounted(() => {
       startTimer()
+    })
+
+    onUnmounted(() => {
+      stopTimer()
+      if(!props.onClose) return
+      props.onClose()
     })
 
     const startTimer = () => {
