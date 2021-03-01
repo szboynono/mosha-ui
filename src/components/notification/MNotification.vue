@@ -9,16 +9,16 @@
       @mouseleave="startTimer"
     >
       <div class="mosha__notification__content">
-        <template v-if="type === 'success' && showIcon">
+        <template v-if="type === 'success' && (showIcon || type)">
           <span class="material-icons-round"> check_circle </span>
         </template>
-        <template v-else-if="type === 'warning' && showIcon">
+        <template v-else-if="type === 'warning' && (showIcon || type)">
           <span class="material-icons-round"> info </span>
         </template>
-        <template v-else-if="type === 'info' && showIcon">
+        <template v-else-if="type === 'info' && (showIcon || type)">
           <span class="material-icons-round"> info </span>
         </template>
-        <template v-else-if="type === 'danger' && showIcon">
+        <template v-else-if="type === 'danger' && (showIcon || type)">
           <span class="material-icons-round"> highlight_off </span>
         </template>
         <template v-else-if="type === 'default' && showIcon">
@@ -87,7 +87,7 @@ export default defineComponent({
     },
     showIcon: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   setup(props) {

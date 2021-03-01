@@ -1,49 +1,77 @@
 <template>
-    <m-button @click="showNotificationTopLeft" type="primary">top-left</m-button>
-    <m-button @click="showNotificationTopRight" type="primary">top-right</m-button>
-    <m-button @click="showNotificationBottomLeft" type="primary">bottom-left</m-button>
-    <m-button @click="showNotificationBottomRight" type="primary">bottom-right</m-button>
+    <template v-if="mode==='basic'">
+        <m-button @click="showNotificationCloseAuto" type="primary" outline>
+            Disappears after 5s
+        </m-button>
+        <m-button @click="showNotificationStay" type="primary" outline>
+            Won't disappear automatically
+        </m-button>
+    </template>
+    <template v-else-if="mode==='types'">
+        <m-button @click="showNotificationSuccess" type="success" outline>
+            Success
+        </m-button>
+        <m-button @click="showNotificationWarning" type="warning" outline>
+            Warning
+        </m-button>
+        <m-button @click="showNotificationInfo" type="primary" outline>
+            Info
+        </m-button>
+        <m-button @click="showNotificationDanger" type="danger" outline>
+            Danger
+        </m-button>
+    </template>
 </template>
 
 <script>
 export default {
     name: 'NotificationDemo',
+    props: {
+        mode: String,
+        types: String
+    },
     methods: {
-        showNotificationTopLeft() {
+        showNotificationCloseAuto() {
             this.$MNotification({
                 title: 'This is a title',
-                description: 'This is a description',
-                position: 'top-left',
-                type: 'info',
-                closable: true,
-                showIcon: true,
+                description: 'This will go away after 5s',
+            })
+        },
+        showNotificationStay() {
+            this.$MNotification({
+                title: 'This is a title',
+                description: 'This will stay until you click the close button',
                 timeout: 0
             })
         },
-        showNotificationTopRight() {
+        showNotificationSuccess() {
             this.$MNotification({
-                title: 'This is a title',
+                title: 'Success',
                 description: 'This is a description',
+                type: 'success'
             })
         },
-        showNotificationBottomLeft() {
+        showNotificationWarning() {
             this.$MNotification({
-                title: 'This is a title',
+                title: 'Warning',
                 description: 'This is a description',
-                position: 'bottom-left',
-                closable: true
+                type: 'warning'
             })
         },
-        showNotificationBottomRight() {
+        showNotificationInfo() {
             this.$MNotification({
-                title: 'This is a title',
+                title: 'Info',
                 description: 'This is a description',
-                position: 'bottom-right',
-                type: 'warning',
-                closable: true,
-                showIcon: true
+                type: 'info'
             })
-        }
+        },
+        showNotificationDanger() {
+            this.$MNotification({
+                title: 'Danger',
+                description: 'This is a description',
+                type: 'danger'
+            })
+        },
     }
 }
 </script>

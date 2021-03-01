@@ -1,3 +1,4 @@
 # Notification
 
-<NotificationDemo />
+<NotificationDemo mode="basic"/>
+<NotificationDemo mode="types" />

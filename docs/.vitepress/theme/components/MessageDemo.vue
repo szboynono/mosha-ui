@@ -2,58 +2,81 @@
   <div class="message-demo">
     <template v-if="mode === 'basic'">
       <m-button
+        outline
         class="message-demo__item"
         @click="showMsgDefault"
         type="primary"
         >Default</m-button
       >
-      <m-button class="message-demo__item" @click="showMsgInfo" type="primary"
+      <m-button
+        outline
+        class="message-demo__item"
+        @click="showMsgInfo"
+        type="primary"
         >Info</m-button
       >
       <m-button
+        outline
         class="message-demo__item"
         @click="showMsgSuccess"
         type="success"
         >Success</m-button
       >
       <m-button
+        outline
         class="message-demo__item"
         @click="showMsgWarning"
         type="warning"
         >Warning</m-button
       >
-      <m-button class="message-demo__item" @click="showMsgDanger" type="danger"
+      <m-button
+        outline
+        class="message-demo__item"
+        @click="showMsgDanger"
+        type="danger"
         >Danger</m-button
       >
     </template>
     <template v-else-if="mode === 'closable'">
       <m-button
+        outline
         class="message-demo__item"
         @click="showMsgDefault"
         type="primary"
         >Default</m-button
       >
-      <m-button class="message-demo__item" @click="showMsgInfo" type="primary"
+      <m-button
+        outline
+        class="message-demo__item"
+        @click="showMsgInfo"
+        type="primary"
         >Info</m-button
       >
       <m-button
+        outline
         class="message-demo__item"
         @click="showMsgSuccess"
         type="success"
         >Success</m-button
       >
       <m-button
+        outline
         class="message-demo__item"
         @click="showMsgWarning"
         type="warning"
         >Warning</m-button
       >
-      <m-button class="message-demo__item" @click="showMsgDanger" type="danger"
+      <m-button
+        outline
+        class="message-demo__item"
+        @click="showMsgDanger"
+        type="danger"
         >Danger</m-button
       >
     </template>
     <template v-else-if="mode === 'timeout'">
       <m-button
+        outline
         class="message-demo__item"
         @click="showMsgTimeout"
         type="primary"
@@ -62,6 +85,7 @@
     </template>
     <template v-else-if="mode === 'onClose'">
       <m-button
+        outline
         class="message-demo__item"
         @click="showMsgOnClose"
         type="primary"
@@ -116,7 +140,7 @@ export default {
     showMsgTimeout() {
       this.$MMessage({
         message: 'This is some dummy message here',
-        timeout: 10000
+        timeout: 10000,
       })
     },
     showMsgOnClose() {
@@ -124,9 +148,9 @@ export default {
         message: 'This is some dummy message here',
         onClose: () => {
           alert('Hi There!')
-        }
+        },
       })
-    }
+    },
   },
 }
 </script>
