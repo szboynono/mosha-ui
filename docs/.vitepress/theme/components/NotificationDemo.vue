@@ -1,42 +1,42 @@
 <template>
     <template v-if="mode==='basic'">
-        <m-button @click="showNotificationCloseAuto" type="primary" outline>
+        <m-button class="notification-demo__item" @click="showNotificationCloseAuto" type="primary" outline>
             Disappears after 5s
         </m-button>
-        <m-button @click="showNotificationStay" type="primary" outline>
+        <m-button class="notification-demo__item" @click="showNotificationStay" type="primary" outline>
             Won't disappear automatically
         </m-button>
     </template>
     <template v-else-if="mode==='types'">
-        <m-button @click="showNotificationSuccess" type="success" outline>
+        <m-button class="notification-demo__item" @click="showNotificationSuccess" type="success" outline>
             Success
         </m-button>
-        <m-button @click="showNotificationWarning" type="warning" outline>
+        <m-button class="notification-demo__item" @click="showNotificationWarning" type="warning" outline>
             Warning
         </m-button>
-        <m-button @click="showNotificationInfo" type="primary" outline>
+        <m-button class="notification-demo__item" @click="showNotificationInfo" type="primary" outline>
             Info
         </m-button>
-        <m-button @click="showNotificationDanger" type="danger" outline>
+        <m-button class="notification-demo__item" @click="showNotificationDanger" type="danger" outline>
             Danger
         </m-button>
     </template>
     <template v-else-if="mode==='position'">
-        <m-button @click="showNotificationTopRight" type="primary" outline>
+        <m-button class="notification-demo__item" @click="showNotificationTopRight" type="primary" outline>
             Top Right
         </m-button>
-        <m-button @click="showNotificationBottomRight" type="primary" outline>
+        <m-button class="notification-demo__item" @click="showNotificationBottomRight" type="primary" outline>
             Bottom Right
         </m-button>
-        <m-button @click="showNotificationBottomLeft" type="primary" outline>
+        <m-button class="notification-demo__item" @click="showNotificationBottomLeft" type="primary" outline>
             Bottom Left
         </m-button>
-        <m-button @click="showNotificationTopLeft" type="primary" outline>
+        <m-button class="notification-demo__item" @click="showNotificationTopLeft" type="primary" outline>
             Top Left
         </m-button>
     </template>
     <template v-else-if="mode==='closable'">
-        <m-button @click="showNotificationNotClosable" type="primary" outline>Hide close button</m-button>
+        <m-button class="notification-demo__item" @click="showNotificationNotClosable" type="primary" outline>Hide close button</m-button>
     </template>
 </template>
 
@@ -126,3 +126,13 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.notification-demo {
+  margin-top: 16px;
+
+  &__item {
+    margin: 4px;
+  }
+}
+</style>
