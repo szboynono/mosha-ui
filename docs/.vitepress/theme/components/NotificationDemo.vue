@@ -23,10 +23,6 @@ export default {
             this.$MNotification({
                 title: 'This is a title',
                 description: 'This is a description',
-                position: 'top-right',
-                type: 'danger',
-                closable: true,
-                showIcon: true
             })
         },
         showNotificationBottomLeft() {

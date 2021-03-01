@@ -71,11 +71,11 @@ export default defineComponent({
     },
     closable: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     showIcon: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   setup(props) {
