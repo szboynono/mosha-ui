@@ -1,5 +1,5 @@
 <template>
-  <transition name="mosha__slide">
+  <transition name="mosha__slide-down">
     <div 
       v-show="visible"
       class="mosha__message"

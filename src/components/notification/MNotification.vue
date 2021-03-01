@@ -1,6 +1,13 @@
 <template>
   <transition :name="transitionType">
-    <div class="mosha__notification" :style="customStyle" :class="[type]" v-if="visible">
+    <div
+      class="mosha__notification"
+      :style="customStyle"
+      :class="[type]"
+      v-if="visible"
+      @mouseenter="stopTimer"
+      @mouseleave="startTimer"
+    >
       <div class="mosha__notification__content">
         <template v-if="type === 'success' && showIcon">
           <span class="material-icons-round"> check_circle </span>
@@ -19,7 +26,9 @@
         </template>
         <div>
           <div class="mosha__notification__content__title">{{ title }}</div>
-          <div class="mosha__notification__content__description">{{ description }}</div>
+          <div class="mosha__notification__content__description">
+            {{ description }}
+          </div>
         </div>
       </div>
       <div
@@ -32,7 +41,7 @@
 </template>
 
 <script lang='ts'>
-import { PropType, computed, defineComponent } from 'vue'
+import { PropType, computed, defineComponent, onMounted, ref } from 'vue'
 
 import { Position } from './types'
 
@@ -64,7 +73,10 @@ export default defineComponent({
       type: Number,
       required: true,
     },
-    timeout: Number,
+    timeout: {
+      type: Number,
+      default: 5000
+    },
     position: {
       type: String as PropType<Position>,
       required: true,
@@ -79,6 +91,24 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const timer = ref<any | null>(null)
+
+    onMounted(() => {
+      startTimer()
+    })
+
+    const startTimer = () => {
+      if (props.timeout <= 0) return
+      timer.value = setTimeout(() => {
+        props.onCloseHandler()
+      }, props.timeout)
+    }
+
+    const stopTimer = () => {
+      if (props.timeout <= 0 || !timer.value) return
+      clearTimeout(timer.value)
+    }
+
     const transitionType = computed(() => {
       if (props.position.endsWith('left')) {
         return 'mosha__slide-right'
@@ -90,28 +120,28 @@ export default defineComponent({
       switch (props.position) {
         case 'top-left':
           return {
-            left: 0,
+            left: '16px',
             top: `${props.offset}px`,
           }
         case 'bottom-left':
           return {
-            left: 0,
+            left: '16px',
             bottom: `${props.offset}px`,
           }
         case 'bottom-right':
           return {
-            right: 0,
+            right: '16px',
             bottom: `${props.offset}px`,
           }
         default:
           return {
-            right: 0,
+            right: '16px',
             top: `${props.offset}px`,
           }
       }
     })
 
-    return { customStyle, transitionType }
+    return { customStyle, transitionType, startTimer, stopTimer }
   },
 })
 </script>

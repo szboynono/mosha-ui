@@ -16,7 +16,8 @@ export default {
                 position: 'top-left',
                 type: 'info',
                 closable: true,
-                showIcon: true
+                showIcon: true,
+                timeout: 0
             })
         },
         showNotificationTopRight() {
