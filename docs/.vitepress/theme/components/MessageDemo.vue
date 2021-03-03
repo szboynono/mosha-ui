@@ -97,60 +97,73 @@
 
 <script>
 import { onMounted } from 'vue'
+
+import { createMessage } from '../../../../src/index'
+
 export default {
   name: 'MessageDemo',
   props: {
     mode: String,
   },
-  methods: {
-    showMsgDefault() {
-      this.$MMessage({
+  setup(props) {
+    const showMsgDefault = () => {
+      createMessage({
         message: 'This is some dummy message here',
-        closable: this.mode === 'closable',
+        closable: props.mode === 'closable',
       })
-    },
-    showMsgInfo() {
-      this.$MMessage({
+    }
+    const showMsgInfo = () => {
+      createMessage({
         message: 'This is some dummy message here',
         type: 'info',
-        closable: this.mode === 'closable',
+        closable: props.mode === 'closable',
       })
-    },
-    showMsgSuccess() {
-      this.$MMessage({
+    }
+    const showMsgSuccess = () => {
+      createMessage({
         message: 'This is some dummy message here',
         type: 'success',
-        closable: this.mode === 'closable',
+        closable: props.mode === 'closable',
       })
-    },
-    showMsgWarning() {
-      this.$MMessage({
+    }
+    const showMsgWarning = () => {
+      createMessage({
         message: 'This is some dummy message here',
         type: 'warning',
-        closable: this.mode === 'closable',
+        closable: props.mode === 'closable',
       })
-    },
-    showMsgDanger() {
-      this.$MMessage({
+    }
+    const showMsgDanger = () => {
+      createMessage({
         message: 'This is some dummy message here',
         type: 'danger',
-        closable: this.mode === 'closable',
+        closable: props.mode === 'closable',
       })
-    },
-    showMsgTimeout() {
-      this.$MMessage({
+    }
+    const showMsgTimeout = () => {
+      createMessage({
         message: 'This is some dummy message here',
         timeout: 10000,
       })
-    },
-    showMsgOnClose() {
-      this.$MMessage({
+    }
+    const showMsgOnClose = () => {
+      createMessage({
         message: 'This is some dummy message here',
         onClose: () => {
           alert('Hi There!')
         },
       })
-    },
+    }
+
+    return {
+      showMsgDefault,
+      showMsgInfo,
+      showMsgSuccess,
+      showMsgWarning,
+      showMsgDanger,
+      showMsgTimeout,
+      showMsgOnClose
+    }
   },
 }
 </script>

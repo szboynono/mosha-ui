@@ -19,26 +19,40 @@ The message will slide in from the top and disappear after 5 seconds once called
 </template>
 
 <script>
-import { onMounted } from 'vue'
+import { createMessage } from 'mosha-ui'
 export default {
-  name: 'demo',
-  methods: {
-    showMsgDefault() {
-      this.$MMessage({message: 'This is some dummy message here',})
-    },
-    showMsgInfo() {
-      this.$MMessage({message: 'This is some dummy message here', type: 'info'})
-    },
-    showMsgSuccess() {
-      this.$MMessage({message: 'This is some dummy message here', type: 'success'})
-    },
-    showMsgWarning() {
-      this.$MMessage({message: 'This is some dummy message here', type: 'warning'})
-    },
-    showMsgDanger() {
-      this.$MMessage({message: 'This is some dummy message here', type: 'danger'})
-    },
-  },
+  setup() {
+    const showMsgDefault = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+      })
+    }
+    const showMsgInfo = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        type: 'info',
+      })
+    }
+    const showMsgSuccess = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        type: 'success',
+      })
+    }
+    const showMsgWarning = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        type: 'warning',
+      })
+    }
+    const showMsgDanger = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        type: 'danger',
+      })
+    }
+    return { showMsgDefault, showMsgInfo, showMsgSuccess, showMsgWarning, showMsgDanger}
+  }
 }
 ```
 
@@ -58,26 +72,45 @@ Give the user the ablity to close the message
 </template>
 
 <script>
-import { onMounted } from 'vue'
+import { createMessage } from 'mosha-ui'
 export default {
-  name: 'demo',
-  methods: {
-    showMsgDefault() {
-      this.$MMessage({message: 'This is some dummy message here', closable: true})
-    },
-    showMsgInfo() {
-      this.$MMessage({message: 'This is some dummy message here', type: 'info', closable: true})
-    },
-    showMsgSuccess() {
-      this.$MMessage({message: 'This is some dummy message here', type: 'success', closable: true})
-    },
-    showMsgWarning() {
-      this.$MMessage({message: 'This is some dummy message here', type: 'warning', closable: true})
-    },
-    showMsgDanger() {
-      this.$MMessage({message: 'This is some dummy message here', type: 'danger', closable: true})
-    },
-  },
+  setup() {
+    const showMsgDefault = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        closable: true,
+      })
+    }
+    const showMsgInfo = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        type: 'info',
+        closable: true,
+      })
+    }
+    const showMsgSuccess = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        type: 'success',
+        closable: true,
+      })
+    }
+    const showMsgWarning = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        type: 'warning',
+        closable: true,
+      })
+    }
+    const showMsgDanger = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        type: 'danger',
+        closable: true,
+      })
+    }
+    return { showMsgDefault, showMsgInfo, showMsgSuccess, showMsgWarning, showMsgDanger}
+  }
 }
 ```
 
@@ -93,14 +126,18 @@ Override the default timeout by specify an `timeout: <time in ms: number>` prope
 </template>
 
 <script>
-import { onMounted } from 'vue'
+import { createMessage } from 'mosha-ui'
 export default {
   name: 'demo',
-  methods: {
-    showMsgTimeout() {
-      this.$MMessage({message: 'This is some dummy message here', timeout: 10000})
-    },
-  },
+  setup() {
+    const showMsgTimeout = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        timeout: 10000,
+      })
+    }
+    return { showMsgTimeout }
+  }
 }
 ```
 
@@ -116,13 +153,19 @@ You can pass a function to have it called right after the message disappears
 </template>
 
 <script>
-import { onMounted } from 'vue'
+import { createMessage } from 'mosha-ui'
 export default {
   name: 'demo',
-  methods: {
-    showMsgOnClose() {
-      this.$MMessage({message: 'This is some dummy message here', onClose: () => { alert('Hi There!') }})
-    },
-  },
+  setup() {
+    const showMsgOnClose = () => {
+      createMessage({
+        message: 'This is some dummy message here',
+        onClose: () => {
+          alert('Hi There!')
+        },
+      })
+    }
+    return { showMsgOnClose }
+  }
 }
 ```

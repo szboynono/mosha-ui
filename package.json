@@ -15,7 +15,7 @@
   ],
   "main": "dist/mosha-ui.umd.js",
   "module": "dist/mosha-ui.es.js",
-  "umdName": "ChangeMe",
+  "umdName": "mosha-ui",
   "umd:main": "dist/mosha-ui.umd.js",
   "jsdelivr": "dist/mosha-ui.umd.js",
   "unpkg": "dist/mosha-ui.umd.js",
