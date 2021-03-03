@@ -4,7 +4,7 @@ Just a message
 
 ## Basic usage
 
-Mosha exposes a global function `$MMessage({...options})` for the message.
+Import the `createMessage` function from the library.
 The message will slide in from the top and disappear after 5 seconds once called.
 
 <MessageDemo mode="basic" />
