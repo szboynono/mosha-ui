@@ -8,7 +8,6 @@ const components = [
   Button,
   Alert,
   Container,
-  Notification
 ]
 
 const install = (Vue: App) => {
